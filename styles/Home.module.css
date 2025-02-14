@@ -1,0 +1,179 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  background-color: #ffe6e6; /* Light pink background */
+  animation: fadeIn 2s ease-in-out;
+}
+
+.loveBox {
+  position: relative;
+  border: 2px solid #b30000; /* Dark red border */
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 50px; /* Adjust to position the box lower */
+  overflow: hidden; /* Ensure the flap doesn't overflow */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='%23ffcccc'/%3E%3C/svg%3E"); /* Subtle paper texture */
+  background-size: 20px 20px;
+}
+
+.loveBox::before {
+  content: '';
+  position: absolute;
+  top: -25px; /* Adjust to position the flap */
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); /* Rotate to create a diamond shape */
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid #b30000; /* Dark red border */
+  border-bottom: none;
+  border-right: none;
+  z-index: 1;
+}
+
+.loveBox::after {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); /* Rotate to create a diamond shape */
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid #b30000; /* Dark red border */
+  border-top: none;
+  border-left: none;
+  z-index: 1;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #b30000; /* Dark red text */
+  font-family: 'Dancing Script', cursive; /* Romantic cursive font */
+  animation: textGlow 1.5s infinite alternate;
+}
+
+.letterText {
+  font-family: 'Dancing Script', cursive; /* Romantic cursive font */
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.yesButton, .noButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.yesButton {
+  background-color: #ff4d4d; /* Bright red background */
+}
+
+.yesButton:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+
+.noButton {
+  background-color: #ff9999; /* Light red background */
+  position: relative; /* Initially relative to the button container */
+}
+
+.noButton:hover {
+  background-color: #ff6666; /* Darker light red on hover */
+}
+
+.heartAnimation {
+  font-size: 5rem;
+  animation: pulse 1s infinite, bounce 2s infinite;
+  color: #ff1a75; /* Bright pink color for the heart */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+  }
+  to {
+    text-shadow: 0 0 20px #ff1a75, 0 0 30px #ff1a75, 0 0 40px #ff1a75;
+  }
+}
+
+.gif {
+  display: block;
+  margin: 0 auto 20px; /* Center the GIF and add some space below it */
+  max-width: 100%; /* Ensure the GIF is responsive */
+  height: auto;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
